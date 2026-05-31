@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TicketReceipt>
+    <ExportTime>31/05/2026 19:39:34</ExportTime>
+    <CustomerInfo>
+        <Name>Le Customer</Name>
+        <Phone>0900000003</Phone>
+    </CustomerInfo>
+    <TripDetails>
+        <Route>Da Nang → Quang Tri | 09:00 | 250.000đ</Route>
+        <DepartureTime>09:00</DepartureTime>
+        <BusPlate>BUS-02</BusPlate>
+        <SeatNumber>6</SeatNumber>
+    </TripDetails>
+    <PaymentInfo>
+        <Method>QR</Method>
+        <Price>250000 VNĐ</Price>
+        <Status>PAID</Status>
+    </PaymentInfo>
+</TicketReceipt>

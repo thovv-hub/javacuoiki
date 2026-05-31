@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="10"
+      alignment="CENTER"
+
+      xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+
+      fx:controller="org.example.cuoikijava.controller.OwnerController">
+
+    <padding>
+        <Insets top="20"
+                right="20"
+                bottom="20"
+                left="20"/>
+    </padding>
+
+    <Label text="OWNER DASHBOARD"/>
+
+    <TextField fx:id="txtPlate"
+               promptText="License Plate"/>
+
+    <TextField fx:id="txtSeats"
+               promptText="Total Seats"/>
+
+    <TextField fx:id="txtType"
+               promptText="Bus Type"/>
+
+    <Button text="Add Bus"
+            onAction="#handleAddBus"/>
+
+    <Button text="Load Bus List"
+            onAction="#handleLoadBus"/>
+
+    <ListView fx:id="listBus"
+              prefWidth="300"
+              prefHeight="200"/>
+
+</VBox>

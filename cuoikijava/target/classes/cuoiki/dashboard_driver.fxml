@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="750.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.cuoikijava.controller.DriverDashboardController">
+
+    <top>
+        <VBox>
+            <HBox alignment="CENTER_LEFT" style="-fx-background-color: #d32f2f; -fx-padding: 15;">
+                <Label text="BUS TICKET SYSTEM - DRIVER PORTAL" textFill="WHITE" style="-fx-font-size: 22px; -fx-font-weight: bold;"/>
+            </HBox>
+            <HBox alignment="CENTER" style="-fx-background-color: #fbc02d; -fx-padding: 6;">
+                <Label text="HỆ THỐNG QUẢN LÝ DÀNH CHO TÀI XẾ" style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+            </HBox>
+        </VBox>
+    </top>
+
+    <left>
+        <VBox spacing="10" style="-fx-background-color: #2c3e50; -fx-padding: 20;" prefWidth="240.0">
+            <VBox alignment="CENTER" spacing="10" style="-fx-padding: 20;">
+                <Label text="🧑‍✈️" style="-fx-font-size: 50px;"/>
+                <Label text="DRIVER" textFill="WHITE" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+            </VBox>
+
+            <Label fx:id="lblUserInfo" text="Xin chào, Tài xế" style="-fx-text-fill: #74b9ff; -fx-font-size: 16px; -fx-font-weight: bold;"/>
+            <Separator />
+
+            <Button fx:id="btnNavInfo" text="👤 Thông Tin" onAction="#switchPanel" prefHeight="48" maxWidth="Infinity" alignment="CENTER_LEFT" style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold; -fx-cursor: hand; -fx-background-radius: 10;"/>
+            <Button fx:id="btnNavTrip" text="🛣 Lịch Trình" onAction="#switchPanel" prefHeight="48" maxWidth="Infinity" alignment="CENTER_LEFT" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold; -fx-cursor: hand;"/>
+            <Button fx:id="btnNavChat" text="💬 Chat Hỗ Trợ" onAction="#switchPanel" prefHeight="48" maxWidth="Infinity" alignment="CENTER_LEFT" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold; -fx-cursor: hand;"/>
+
+            <Region VBox.vgrow="ALWAYS" />
+            <Separator />
+            <Button text="🚪 Đăng Xuất" onAction="#handleLogout" prefHeight="48" maxWidth="Infinity" alignment="CENTER_LEFT" style="-fx-background-color: transparent; -fx-text-fill: #ff7675; -fx-font-size: 16px; -fx-font-weight: bold; -fx-cursor: hand;"/>
+        </VBox>
+    </left>
+
+    <center>
+        <StackPane style="-fx-padding: 30;">
+
+            <VBox fx:id="pnlInfo" spacing="20">
+                <Label text="HỒ SƠ TÀI XẾ" style="-fx-font-size: 26px; -fx-font-weight: bold;"/>
+                <VBox spacing="15" style="-fx-background-color: white; -fx-padding: 30; -fx-background-radius: 15; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);">
+                    <Label fx:id="lblProfileName" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+                    <Label fx:id="lblProfilePhone" style="-fx-font-size: 18px; -fx-text-fill: #34495e;"/>
+                    <Label fx:id="lblProfileUsername" style="-fx-font-size: 18px; -fx-text-fill: #34495e;"/>
+                    <Label text="Bằng lái: Hạng D/E (Chuyên nghiệp)" style="-fx-font-size: 18px; -fx-text-fill: #34495e;"/>
+                    <Label text="Trạng thái: ĐANG LÀM VIỆC" style="-fx-font-size: 18px; -fx-text-fill: #27ae60; -fx-font-weight: bold;"/>
+                </VBox>
+            </VBox>
+
+            <VBox fx:id="pnlTrip" spacing="20" visible="false">
+                <Label text="LỊCH TRÌNH CỦA TÔI" style="-fx-font-size: 26px; -fx-font-weight: bold;"/>
+                <HBox spacing="20" alignment="CENTER_LEFT">
+                    <ComboBox fx:id="cbTrip" promptText="-- Chọn chuyến xe được phân công --" prefWidth="450" style="-fx-pref-height: 40;"/>
+                    <Label fx:id="lblInfo" text="Đã đặt: 0 | Còn trống: 16" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #2980b9;"/>
+                </HBox>
+                <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS" style="-fx-background-color: transparent;">
+                    <VBox fx:id="seatBox" spacing="10" style="-fx-padding: 10;"/>
+                </ScrollPane>
+            </VBox>
+
+            <VBox fx:id="pnlChat" spacing="10" visible="false">
+                <Label text="CHAT VỚI ĐIỀU HÀNH / KHÁCH" style="-fx-font-size: 26px; -fx-font-weight: bold;"/>
+                <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS" prefHeight="500">
+                    <VBox fx:id="messageBox" spacing="10" style="-fx-padding: 10;"/>
+                </ScrollPane>
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <VBox spacing="5">
+                        <ComboBox fx:id="cbReceiverRole" promptText="Chọn Role" prefWidth="150"/>
+                        <ComboBox fx:id="cbReceiver" promptText="Người nhận" prefWidth="150"/>
+                    </VBox>
+                    <TextArea fx:id="txtMessage" promptText="Nhập tin nhắn..." prefHeight="60" HBox.hgrow="ALWAYS"/>
+                    <Button text="Gửi" onAction="#handleSendMessage" style="-fx-background-color: #d32f2f; -fx-text-fill: white; -fx-font-weight: bold; -fx-pref-height: 60;"/>
+                </HBox>
+            </VBox>
+
+        </StackPane>
+    </center>
+</BorderPane>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TicketReceipt>
+    <ExportTime>29/05/2026 20:24:13</ExportTime>
+    <CustomerInfo>
+        <Name>Le Customer</Name>
+        <Phone>0900000003</Phone>
+    </CustomerInfo>
+    <TripDetails>
+        <Route>Hue → Da Nang | 07:00 | 150.000đ</Route>
+        <DepartureTime>07:00</DepartureTime>
+        <BusPlate>BUS-01</BusPlate>
+        <SeatNumber>5</SeatNumber>
+    </TripDetails>
+    <PaymentInfo>
+        <Method>CASH</Method>
+        <Price>150000 VNĐ</Price>
+        <Status>UNPAID</Status>
+    </PaymentInfo>
+</TicketReceipt>

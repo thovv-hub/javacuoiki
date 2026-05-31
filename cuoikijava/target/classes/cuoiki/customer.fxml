@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="10"
+      alignment="CENTER"
+
+      xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+
+      fx:controller="org.example.cuoikijava.controller.CustomerController">
+
+    <padding>
+        <Insets top="20"
+                right="20"
+                bottom="20"
+                left="20"/>
+    </padding>
+
+    <Label text="CUSTOMER DASHBOARD"/>
+
+    <Button text="Load Bus List"
+            onAction="#handleLoadBus"/>
+
+    <ListView fx:id="listBus"
+              prefWidth="350"
+              prefHeight="200"/>
+
+    <TextField fx:id="txtCustomer"
+               promptText="Customer Name"/>
+
+    <TextField fx:id="txtPlate"
+               promptText="License Plate"/>
+
+    <TextField fx:id="txtSeat"
+               promptText="Seat Number"/>
+
+    <Button text="Book Ticket"
+            onAction="#handleBookTicket"/>
+
+    <Button text="Load Ticket"
+            onAction="#handleLoadTicket"/>
+
+    <ListView fx:id="listTicket"
+              prefWidth="350"
+              prefHeight="200"/>
+
+</VBox>
